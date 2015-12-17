@@ -8,7 +8,9 @@
 from pytesser import *
 import Image
 #第一步：打开图像
-im=Image.open("example_3.jpg")
+Image.open("example_3.PNG").convert('RGB').save('example_5.jpg')#进行格式转换
+im=Image.open("example_5.jpg")
+#im.show()
 #第二步：把彩色图像转化为灰度图像
 imgry=im.convert('L')
 #第三步：把图像中的噪声去除掉这里的图像比较简单，直接阈值化就行了。我们把大于阈值threshold的像素置为1，其他的置为0。
